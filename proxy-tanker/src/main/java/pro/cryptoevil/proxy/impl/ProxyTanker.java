@@ -14,6 +14,7 @@ public class ProxyTanker implements IProxyTanker {
     private int proxyLimit;
     private long grabDelay;
 
+    private Thread thread;
     private ProxyRepository<Proxy> proxyRepository;
     private IProxyHolder<ProxyNode, String> proxyHolder;
 
@@ -21,6 +22,7 @@ public class ProxyTanker implements IProxyTanker {
                        int proxyLimit, long grabDelay, boolean autoStart) {
         this.proxyLimit = proxyLimit;
         this.grabDelay = grabDelay;
+        this.proxyHolder = proxyHolder;
         this.proxyRepository = proxyRepository;
         if (autoStart) {
             this.start();
@@ -29,12 +31,24 @@ public class ProxyTanker implements IProxyTanker {
 
     @Override
     public void start() {
-        
+        log.info("start -> Starting proxy tanker daemon.");
+        this.thread = new Thread(() -> {
+            while (true) {
+                this.grabAttempt();
+                try {
+                    Thread.sleep(this.grabDelay);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
     }
 
     @Override
     public void stop() {
-
+        log.info("stop -> Stopping proxy tanker daemon.");
+        this.thread.interrupt();
     }
 
     private boolean grabAttempt() {
