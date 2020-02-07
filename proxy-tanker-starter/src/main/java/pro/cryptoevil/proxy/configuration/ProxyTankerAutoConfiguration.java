@@ -25,21 +25,22 @@ public class ProxyTankerAutoConfiguration {
 
     @Value("${proxy.proxy-validator.checkUrl}")
     private String proxyValidatorCheckUrl;
-    @Value("{proxy.proxy-holder.checkDelay}")
+
+    @Value("${proxy.proxy-holder.checkDelay}")
     private Long proxyHolderCheckDelay;
-    @Value("{proxy.proxy-holder.autoStart}")
+    @Value("${proxy.proxy-holder.autoStart}")
     private Boolean proxyHolderAutoStart;
 
-    @Value("{proxy.proxy-tanker.proxyLimit}")
+    @Value("${proxy.proxy-tanker.proxyLimit}")
     private Integer proxyTankerProxyLimit;
-    @Value("{proxy.proxy-tanker.grabDelay}")
+    @Value("${proxy.proxy-tanker.grabDelay}")
     private Long proxyTankerGrabDelay;
-    @Value("{proxy.proxy-tanker.autoStart}")
+    @Value("${proxy.proxy-tanker.autoStart}")
     private Boolean proxyTankerAutoStart;
 
-    @Value("{proxy.integrations.getproxylist.endpointUrl")
+    @Value("${proxy.integrations.getproxylist.endpointUrl}")
     private String proxyListEndpointUrl;
-    @Value("proxy.integrations.getproxylist.apiKey")
+    @Value("${proxy.integrations.getproxylist.apiKey}")
     private String proxyListApiKey;
 
     @Bean
