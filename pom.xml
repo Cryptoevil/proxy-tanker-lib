@@ -9,6 +9,10 @@
     <packaging>pom</packaging>
     <version>0.0.3</version>
 
+    <url>https://github.com/Cryptoevil/proxy-tanker-lib</url>
+    <name>proxy-tanker-lib</name>
+    <description>Proxy Tanker lib</description>
+
     <modules>
         <module>proxy-tanker</module>
         <module>proxy-tanker-starter</module>
@@ -17,6 +21,28 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Ruby Da Cherry</name>
+            <email>ruby@cryptoevil.pro</email>
+            <organization>Cryptoevil.pro</organization>
+            <organizationUrl>https://github.com/Cryptoevil</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/Cryptoevil/proxy-tanker-lib.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Cryptoevil/proxy-tanker-lib.git</developerConnection>
+        <url>http://github.com/Cryptoevil/proxy-tanker-lib</url>
+    </scm>
 
     <build>
         <plugins>
