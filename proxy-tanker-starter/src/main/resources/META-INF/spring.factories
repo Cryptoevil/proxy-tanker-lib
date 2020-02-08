@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=pro.cryptoevil.proxy.configuration.ProxyTankerAutoConfiguration
