@@ -11,13 +11,13 @@
 
     <artifactId>proxy-tanker-starter</artifactId>
     <name>proxy tanker starter</name>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
 
     <dependencies>
         <dependency>
             <groupId>pro.cryptoevil</groupId>
             <artifactId>proxy-tanker</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </dependency>
 
         <dependency>
