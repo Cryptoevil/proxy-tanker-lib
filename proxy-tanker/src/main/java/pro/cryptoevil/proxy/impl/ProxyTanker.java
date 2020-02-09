@@ -16,9 +16,9 @@ public class ProxyTanker implements IProxyTanker {
 
     private Thread thread;
     private ProxyRepository<Proxy> proxyRepository;
-    private IProxyHolder<ProxyNode, String> proxyHolder;
+    private IProxyHolder<ProxyNode> proxyHolder;
 
-    public ProxyTanker(ProxyRepository<Proxy> proxyRepository, IProxyHolder<ProxyNode, String> proxyHolder,
+    public ProxyTanker(ProxyRepository<Proxy> proxyRepository, IProxyHolder<ProxyNode> proxyHolder,
                        int proxyLimit, long grabDelay, boolean autoStart) {
         this.proxyLimit = proxyLimit;
         this.grabDelay = grabDelay;

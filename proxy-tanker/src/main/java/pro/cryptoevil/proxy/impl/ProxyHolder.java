@@ -12,7 +12,7 @@ import pro.cryptoevil.proxy.core.IProxyValidator;
 import pro.cryptoevil.proxy.impl.model.ProxyNode;
 
 @Slf4j
-public class ProxyHolder implements IProxyHolder<ProxyNode, String> {
+public class ProxyHolder implements IProxyHolder<ProxyNode> {
 
     private long checkDelay;
 
@@ -74,13 +74,21 @@ public class ProxyHolder implements IProxyHolder<ProxyNode, String> {
                 .collect(Collectors.toList());
 
         if (!list.isEmpty()) {
+            log.info("removeProxy -> Removed proxy with id: {}", id);
             return this.proxyList.remove(list.get(0));
         }
+        log.warn("removeProxy -> Cannot remove proxy id {}, list is empty", id);
         return false;
     }
 
     @Override
     public ProxyNode getFreshProxy() {
+        ProxyNode proxyNode = this.proxyList.pollFirst();
+        if (proxyNode != null) {
+            log.info("getFreshProxy -> Bring fresh proxy, id: {}" , proxyNode.getId());
+        } else {
+            log.warn("getFreshProxy -> Proxy list is empty!");
+        }
         return this.proxyList.pollFirst();
     }
 
