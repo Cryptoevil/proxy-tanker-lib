@@ -101,4 +101,15 @@ public class ProxyHolder implements IProxyHolder<ProxyNode> {
     public Collection<ProxyNode> getProxyList() {
         return this.proxyList;
     }
+
+    @Override
+    public long getCheckDelay() {
+        return this.checkDelay;
+    }
+
+    @Override
+    public long updateCheckDelay(long newDelay) {
+        this.checkDelay = newDelay;
+        return this.checkDelay;
+    }
 }

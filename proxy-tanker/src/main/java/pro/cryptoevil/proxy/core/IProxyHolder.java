@@ -13,4 +13,8 @@ public interface IProxyHolder<T> extends Daemon {
     int getProxyCount();
 
     Collection<T> getProxyList();
+
+    long getCheckDelay();
+
+    long updateCheckDelay(long newDelay);
 }
