@@ -2,15 +2,13 @@ package pro.cryptoevil.proxy.impl.model;
 
 import java.net.Proxy;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.Value;
+import lombok.*;
 
-@Value
+@Data
 @Builder
 @ToString
 @EqualsAndHashCode
+@AllArgsConstructor
 public class ProxyNode {
     private String id;
     private String host;
