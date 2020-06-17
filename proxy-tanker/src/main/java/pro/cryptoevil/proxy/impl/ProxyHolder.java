@@ -89,7 +89,7 @@ public class ProxyHolder implements IProxyHolder<ProxyNode> {
         } else {
             log.warn("getFreshProxy -> Proxy list is empty!");
         }
-        return this.proxyList.pollFirst();
+        return proxyNode;
     }
 
     @Override

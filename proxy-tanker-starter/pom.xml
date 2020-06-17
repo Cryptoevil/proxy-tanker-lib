@@ -5,19 +5,19 @@
     <parent>
         <artifactId>proxy-tanker-lib</artifactId>
         <groupId>pro.cryptoevil</groupId>
-        <version>0.0.7</version>
+        <version>0.0.8.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>proxy-tanker-starter</artifactId>
     <name>proxy tanker starter</name>
-    <version>0.0.7</version>
+    <version>0.0.8.1</version>
 
     <dependencies>
         <dependency>
             <groupId>pro.cryptoevil</groupId>
             <artifactId>proxy-tanker</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.8.1</version>
         </dependency>
 
         <dependency>
