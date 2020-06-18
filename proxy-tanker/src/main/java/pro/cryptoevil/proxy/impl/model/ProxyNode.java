@@ -13,5 +13,7 @@ public class ProxyNode {
     private String id;
     private String host;
     private int port;
+    private boolean ssl;
+    private int socksVersion;
     private Proxy.Type proxyType;
 }

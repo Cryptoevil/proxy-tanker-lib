@@ -71,6 +71,7 @@ public class ProxyTanker implements IProxyTanker {
                 .id(IdProvider.getStringId())
                 .host(proxy.getIp())
                 .port(proxy.getPort())
+                .ssl(false)
                 .build();
         log.info("grabAttempt -> Got proxy, ip: {}, port: {}", proxy.getIp(), proxy.getPort());
         this.proxyHolder.holdProxy(proxyNode);
