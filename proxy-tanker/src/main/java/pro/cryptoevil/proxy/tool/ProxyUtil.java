@@ -7,29 +7,29 @@ import java.net.Proxy;
 
 public class ProxyUtil {
 
-    public static ProxyNode.ProxyNodeBuilder wrapType(ProxyNode.ProxyNodeBuilder builder,
-                                                      @NonNull String proxyType) {
+    public static ProxyNode wrapType(ProxyNode proxyNode,
+                                     @NonNull String proxyType) {
         switch (proxyType) {
             case "http":
-                builder.proxyType(Proxy.Type.HTTP);
-                builder.ssl(false);
+                proxyNode.setProxyType(Proxy.Type.HTTP);
+                proxyNode.setSsl(false);
                 break;
             case "https":
-                builder.proxyType(Proxy.Type.HTTP);
-                builder.ssl(true);
+                proxyNode.setProxyType(Proxy.Type.HTTP);
+                proxyNode.setSsl(true);
                 break;
             case "socks":
             case "socks5":
-                builder.proxyType(Proxy.Type.SOCKS);
-                builder.socksVersion(5);
-                builder.ssl(false);
+                proxyNode.setProxyType(Proxy.Type.SOCKS);
+                proxyNode.setSocksVersion(5);
+                proxyNode.setSsl(false);
                 break;
             case "socks4":
-                builder.proxyType(Proxy.Type.SOCKS);
-                builder.socksVersion(4);
-                builder.ssl(false);
+                proxyNode.setProxyType(Proxy.Type.SOCKS);
+                proxyNode.setSocksVersion(4);
+                proxyNode.setSsl(false);
                 break;
         }
-        return builder;
+        return proxyNode;
     }
 }
